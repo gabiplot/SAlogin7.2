@@ -1,6 +1,6 @@
 sonata_admin:
-    title: 'Inventario Bienes'
-    title_logo: img/logo_title.png
+    title: 'LaborTerapia'
+    title_logo: img/challenge.png
     dashboard:
         blocks:
             - { type: sonata.admin.block.admin_list, position: left }
@@ -13,12 +13,12 @@ sonata_admin:
             inventario:
                 label: Inventario Actual
                 roles: [ ROLE_USER ]
-            totales:
-                roles: [ROLE_SUPER_ADMIN]
-                label: Totales
-                items:
-                    - route: admin_app_objetoinventariototales_total
-                      label: Totales
+            #totales:
+            #    roles: [ROLE_SUPER_ADMIN]
+            #    label: Totales
+            #    items:
+            #        - route: admin_app_objetoinventariototales_total
+            #          label: Totales
             
     options:
         legacy_twig_text_extension: false

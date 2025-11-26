@@ -28,35 +28,6 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
-
-    admin.rubro:
-        class: App\Admin\RubroAdmin
-        arguments: [~, App\Entity\Rubro, ~]
-        tags:
-            - { name: sonata.admin, manager_type: orm, group: admin, label: Rubro }
-        public: true
-
-    admin.sub_rubro:
-        class: App\Admin\SubRubroAdmin
-        arguments: [~, App\Entity\SubRubro, ~]
-        tags:
-            - { name: sonata.admin, manager_type: orm, group: admin, label: SubRubro }
-        public: true
-
-    admin.objeto:
-        class: App\Admin\ObjetoAdmin
-        arguments: [~, App\Entity\Objeto, ~]
-        tags:
-            - { name: sonata.admin, manager_type: orm, group: admin, label: Objeto }
-        public: true
-
-    admin.unidad:
-        class: App\Admin\UnidadAdmin
-        arguments: [~, App\Entity\Unidad, ~]
-        tags:
-            - { name: sonata.admin, manager_type: orm, group: admin, label: Unidad }
-        public: true
-
     admin.user:
         class: App\Admin\UserAdmin
         arguments: [~, App\Entity\User, ~]
@@ -64,51 +35,4 @@ services:
             - { name: sonata.admin, manager_type: orm, group: admin, label: Usuarios }
         public: true
 
-    admin.inventario:
-        class: App\Admin\InventarioAdmin
-        arguments: [~, App\Entity\Inventario, App\Controller\InventarioAdminController]
-        tags:
-            - { name: sonata.admin, 
-                manager_type: orm, 
-                group: inventario, 
-                label: Inventario
-                }
-        public: true
-        calls:
-            - [addChild, ['@admin.objeto_inventario', 'inventario']]
-            - [setTemplate, [edit, 'inventario/edit.html.twig'] ]
 
-    admin.inventariocerrado:
-        class: App\Admin\InventarioCerradoAdmin
-        arguments: [~, App\Entity\Inventario, App\Controller\InventarioAdminController]
-        tags:
-            - { name: sonata.admin, manager_type: orm, group: inventario_mas, label: InventarioCerrado }
-        public: true   
-        calls:
-            - [addChild, ['@admin.objeto_inventariocerrado', 'inventario']]
-            - [setTemplate, [edit, 'inventario/edit.html.twig'] ]             
-
-    admin.objeto_inventario:
-        class: App\Admin\ObjetoInventarioAdmin
-        arguments: [~, App\Entity\ObjetoInventario, ~]
-        tags:
-            - { name: sonata.admin, manager_type: orm, group: inventario_mas, label: ObjetoInventario, show_in_dashboard: false }
-        public: true
-        calls:
-            - [setTemplate, [edit, 'inventario/edit.html.twig'] ]        
-
-    admin.objeto_inventariocerrado:
-        class: App\Admin\ObjetoInventarioCerradoAdmin
-        arguments: [~, App\Entity\ObjetoInventario, ~]
-        tags:
-            - { name: sonata.admin, manager_type: orm, group: inventario_mas, label: ObjetoInventarioCerrado, show_in_dashboard: false }
-        public: true
-        calls:
-            - [setTemplate, [edit, 'inventariocerrado/edit.html.twig'] ]              
-
-    admin.objeto_inventario_totales:
-        class: App\Admin\ObjetoInventarioTotalesAdmin
-        arguments: [~, App\Entity\ObjetoInventario, App\Controller\ObjetoInventarioTotalesAdminController]
-        tags:
-            - { name: sonata.admin, manager_type: orm, group: inventario, label: Total General, show_in_dashboard: false  }
-        public: true

@@ -3,26 +3,18 @@ security:
     #VERIFICAR ROLES ACCESO
     role_hierarchy:
         ROLE_USER: [   
-             ROLE_ADMIN_OBJETO_LIST,
-             ROLE_ADMIN_RUBRO_LIST,
-             ROLE_ADMIN_SUB_RUBRO_LIST,
-             ROLE_ADMIN_INVENTARIO_LIST,
-             ROLE_ADMIN_INVENTARIO_VIEW,
-             ROLE_ADMIN_INVENTARIO_EDIT,
-             ROLE_ADMIN_INVENTARIO_CREATE,
-             ROLE_ADMIN_INVENTARIOCERRADO_LIST,
-             ROLE_ADMIN_INVENTARIOCERRADO_VIEW,
-             ROLE_ADMIN_OBJETO_INVENTARIO_ALL,
-             ROLE_ADMIN_OBJETO_INVENTARIOCERRADO_LIST,
+             #ROLE_ADMIN_***_LIST,
+             #ROLE_ADMIN_***_VIEW,
+             #ROLE_ADMIN_***_EDIT,
              ROLE_ADMIN         
             ]
 
         ROLE_ADMIN: [
-            
+            ROLE_USER
             ]
 
         ROLE_SUPER_ADMIN: [
-            ROLE_USER
+            ROLE_ADMIN
             ]
 
     encoders:

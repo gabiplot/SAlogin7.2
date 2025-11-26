@@ -6,7 +6,7 @@
              <ul class="nav navbar-nav">
                     <li>
                         <a>
-                           <b>{{ app.user.unidad }} - {% if app.user.rol == 'ROLE_SUPER_ADMIN' %}SUPER{%else%}USUARIO{%endif%}</b>
+                           <b>{{app.user.rol}} - ( {{ app.user.email | upper }} )</b>
                         </a>
                     </li>
                  {% block sonata_top_nav_menu_add_block %}

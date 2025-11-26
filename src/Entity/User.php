@@ -65,11 +65,6 @@ class User implements UserInterface, \Serializable
      */
     private $isSuspended = false;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Unidad::class, inversedBy="users")
-     */
-    private $unidad;
-
     public function getId()
     {
         return $this->id;
@@ -238,16 +233,5 @@ class User implements UserInterface, \Serializable
 
         return $this->getUsername();
     }
-
-    public function getUnidad(): ?Unidad
-    {
-        return $this->unidad;
-    }
-
-    public function setUnidad(?Unidad $unidad): self
-    {
-        $this->unidad = $unidad;
-
-        return $this;
-    }    
+   
 }

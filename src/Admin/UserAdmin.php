@@ -26,7 +26,7 @@ final class UserAdmin extends AbstractAdmin
     {
         $datagridMapper
             //->add('id')
-            ->add('unidad')
+            //->add('unidad')
             ->add('email')
             ->add('password')            
             //->add('roles')
@@ -39,7 +39,7 @@ final class UserAdmin extends AbstractAdmin
     {
         $listMapper
             //->add('id')
-            ->add('unidad')
+            //->add('unidad')
             ->add('email')
             ->add('password')
             ->add('rol')            
@@ -59,7 +59,7 @@ final class UserAdmin extends AbstractAdmin
     {
         $formMapper
             //->add('id')
-            ->add('unidad')
+            //->add('unidad')
             ->add('email')
             ->add('password')            
             //->add('roles')
@@ -79,7 +79,7 @@ final class UserAdmin extends AbstractAdmin
     {
         $showMapper
             //->add('id')
-            ->add('unidad')
+            //->add('unidad')
             ->add('email')
             ->add('password')
             ->add('rol')
